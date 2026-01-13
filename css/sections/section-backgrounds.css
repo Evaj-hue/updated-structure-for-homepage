@@ -1,0 +1,583 @@
+/* ============================================
+   FUPIX SECTION BACKGROUNDS
+   Corporate Tech Style - BOLD & VISIBLE
+   ============================================ */
+
+/* ============================================
+   BACKGROUND VARIABLES
+   ============================================ */
+:root {
+    --bg-dot-pattern: radial-gradient(circle, rgba(51, 204, 204, 0.25) 1.5px, transparent 1.5px);
+    --bg-dot-size: 25px;
+    --bg-glow-primary: rgba(51, 204, 204, 0.25);
+    --bg-glow-secondary: rgba(0, 204, 204, 0.20);
+    --bg-glow-tertiary: rgba(102, 221, 221, 0.18);
+}
+
+
+/* ============================================
+   HOME SECTION
+   Bold gradient orbs with visible grid
+   ============================================ */
+#home {
+    background: 
+        /* Large gradient orb - top left */
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(51, 204, 204, 0.35) 0%,
+            rgba(51, 204, 204, 0.15) 25%,
+            transparent 50%
+        ),
+        /* Large gradient orb - bottom right */
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(0, 204, 204, 0.30) 0%,
+            rgba(0, 204, 204, 0.12) 25%,
+            transparent 50%
+        ),
+        /* Center glow */
+        radial-gradient(
+            ellipse 70% 60% at 50% 50%,
+            rgba(102, 221, 221, 0.15) 0%,
+            transparent 70%
+        ),
+        /* Grid pattern */
+        linear-gradient(
+            rgba(51, 204, 204, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(51, 204, 204, 0.08) 1px,
+            transparent 1px
+        ),
+        /* Dot pattern */
+        var(--bg-dot-pattern),
+        /* Base gradient */
+        linear-gradient(
+            135deg,
+            #f8fcfc 0%,
+            #e8f4f4 25%,
+            #dceaea 50%,
+            #e8f4f4 75%,
+            #f8fcfc 100%
+        );
+    background-size: 
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        50px 50px,
+        50px 50px,
+        var(--bg-dot-size) var(--bg-dot-size),
+        100% 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated floating orb */
+#home::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: -100px;
+    right: -100px;
+    background: 
+        radial-gradient(
+            circle,
+            rgba(51, 204, 204, 0.20) 0%,
+            rgba(51, 204, 204, 0.08) 40%,
+            transparent 70%
+        );
+    border-radius: 50%;
+    animation: floatOrb1 15s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#home::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    left: -100px;
+    background: 
+        radial-gradient(
+            circle,
+            rgba(0, 204, 204, 0.18) 0%,
+            rgba(0, 204, 204, 0.06) 40%,
+            transparent 70%
+        );
+    border-radius: 50%;
+    animation: floatOrb2 18s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatOrb1 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(-50px, 50px) scale(1.1);
+    }
+    50% {
+        transform: translate(-30px, 100px) scale(0.95);
+    }
+    75% {
+        transform: translate(30px, 50px) scale(1.05);
+    }
+}
+
+@keyframes floatOrb2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(60px, -40px) scale(1.05);
+    }
+    50% {
+        transform: translate(40px, -80px) scale(1.1);
+    }
+    75% {
+        transform: translate(-20px, -40px) scale(0.95);
+    }
+}
+
+
+/* ============================================
+   SERVICES SECTION
+   Bold circuit board with glowing nodes
+   ============================================ */
+#services {
+    background: 
+        /* Corner glow - top left */
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(51, 204, 204, 0.35) 0%,
+            rgba(51, 204, 204, 0.15) 20%,
+            transparent 45%
+        ),
+        /* Corner glow - bottom right */
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(0, 204, 204, 0.30) 0%,
+            rgba(0, 204, 204, 0.12) 20%,
+            transparent 45%
+        ),
+        /* Diagonal accent stripe */
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 35%,
+            rgba(51, 204, 204, 0.08) 35%,
+            rgba(51, 204, 204, 0.12) 50%,
+            rgba(51, 204, 204, 0.08) 65%,
+            transparent 65%,
+            transparent 100%
+        ),
+        /* Circuit lines - horizontal */
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 79px,
+            rgba(51, 204, 204, 0.15) 79px,
+            rgba(51, 204, 204, 0.15) 81px,
+            transparent 81px,
+            transparent 160px
+        ),
+        /* Circuit lines - vertical */
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 79px,
+            rgba(51, 204, 204, 0.15) 79px,
+            rgba(51, 204, 204, 0.15) 81px,
+            transparent 81px,
+            transparent 160px
+        ),
+        /* Node dots at intersections */
+        radial-gradient(
+            circle at 80px 80px,
+            rgba(51, 204, 204, 0.30) 4px,
+            rgba(51, 204, 204, 0.15) 6px,
+            transparent 8px
+        ),
+        /* Base gradient */
+        linear-gradient(
+            160deg,
+            #f6fcfc 0%,
+            #e6f2f2 30%,
+            #dae8e8 60%,
+            #e6f2f2 100%
+        );
+    background-size: 
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        160px 160px,
+        160px 160px,
+        80px 80px,
+        100% 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pulsing center glow */
+#services::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    transform: translate(-50%, -50%);
+    background: 
+        radial-gradient(
+            circle,
+            rgba(51, 204, 204, 0.20) 0%,
+            rgba(51, 204, 204, 0.08) 35%,
+            transparent 60%
+        );
+    animation: pulseGlow 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Floating accent */
+#services::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    right: -100px;
+    background: 
+        radial-gradient(
+            circle,
+            rgba(102, 221, 221, 0.15) 0%,
+            transparent 60%
+        );
+    border-radius: 50%;
+    animation: floatOrb1 20s ease-in-out infinite reverse;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0.3;
+    }
+}
+
+
+/* ============================================
+   ABOUT SECTION
+   Bold waves with prominent spotlight
+   ============================================ */
+#about {
+    background: 
+        /* Top wave decoration - more visible */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 180'%3E%3Cpath fill='%2333cccc' fill-opacity='0.15' d='M0,128L48,122.7C96,117,192,107,288,101.3C384,96,480,96,576,106.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E") no-repeat top center,
+        /* Bottom wave decoration - more visible */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 180'%3E%3Cpath fill='%2333cccc' fill-opacity='0.18' d='M0,64L48,74.7C96,85,192,107,288,112C384,117,480,107,576,90.7C672,75,768,53,864,58.7C960,64,1056,96,1152,106.7C1248,117,1344,107,1392,101.3L1440,96L1440,180L1392,180C1344,180,1248,180,1152,180C1056,180,960,180,864,180C768,180,672,180,576,180C480,180,384,180,288,180C192,180,96,180,48,180L0,180Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom center,
+        /* Center spotlight - more prominent */
+        radial-gradient(
+            ellipse 70% 60% at 50% 50%,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(255, 255, 255, 0.4) 30%,
+            transparent 70%
+        ),
+        /* Corner accent - top left */
+        radial-gradient(
+            circle at 5% 15%,
+            rgba(51, 204, 204, 0.25) 0%,
+            rgba(51, 204, 204, 0.10) 20%,
+            transparent 40%
+        ),
+        /* Corner accent - bottom right */
+        radial-gradient(
+            circle at 95% 85%,
+            rgba(0, 204, 204, 0.22) 0%,
+            rgba(0, 204, 204, 0.08) 20%,
+            transparent 40%
+        ),
+        /* Horizontal lines */
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 49px,
+            rgba(51, 204, 204, 0.08) 49px,
+            rgba(51, 204, 204, 0.08) 50px
+        ),
+        /* Dot pattern */
+        var(--bg-dot-pattern),
+        /* Base gradient - with more teal tint */
+        linear-gradient(
+            180deg,
+            #f4fafa 0%,
+            #e8f2f2 25%,
+            #dcecec 50%,
+            #e8f2f2 75%,
+            #f4fafa 100%
+        );
+    background-size: 
+        100% 140px,
+        100% 140px,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 50px,
+        var(--bg-dot-size) var(--bg-dot-size),
+        100% 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated shine sweep */
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(
+            120deg,
+            transparent 0%,
+            transparent 30%,
+            rgba(51, 204, 204, 0.12) 45%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(51, 204, 204, 0.12) 55%,
+            transparent 70%,
+            transparent 100%
+        );
+    animation: shineEffect 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Floating blob */
+#about::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: 
+        radial-gradient(
+            circle,
+            rgba(51, 204, 204, 0.15) 0%,
+            rgba(51, 204, 204, 0.05) 40%,
+            transparent 70%
+        );
+    border-radius: 50%;
+    animation: floatOrb2 25s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes shineEffect {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+
+/* ============================================
+   Z-INDEX - Content above backgrounds
+   ============================================ */
+#home .card-content,
+#services .card-content,
+#about .card-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    #home::before,
+    #home::after,
+    #services::before,
+    #services::after,
+    #about::before,
+    #about::after {
+        animation: none;
+    }
+}
+
+
+/* ============================================
+   RESPONSIVE - Tablet
+   ============================================ */
+@media (max-width: 768px) {
+    :root {
+        --bg-glow-primary: rgba(51, 204, 204, 0.20);
+        --bg-glow-secondary: rgba(0, 204, 204, 0.15);
+        --bg-glow-tertiary: rgba(102, 221, 221, 0.12);
+        --bg-dot-size: 20px;
+    }
+    
+    #home::before,
+    #home::after {
+        width: 400px;
+        height: 400px;
+    }
+    
+    #services {
+        background-size: 
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100px 100px,
+            100px 100px,
+            50px 50px,
+            100% 100%;
+    }
+    
+    #services::before {
+        width: 500px;
+        height: 500px;
+    }
+    
+    #about {
+        background-size: 
+            100% 100px,
+            100% 100px,
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 40px,
+            var(--bg-dot-size) var(--bg-dot-size),
+            100% 100%;
+    }
+}
+
+
+/* ============================================
+   RESPONSIVE - Mobile
+   ============================================ */
+@media (max-width: 480px) {
+    :root {
+        --bg-dot-size: 15px;
+    }
+    
+    /* Simplified but still visible backgrounds */
+    #home {
+        background: 
+            radial-gradient(
+                circle at 20% 20%,
+                rgba(51, 204, 204, 0.25) 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                circle at 80% 80%,
+                rgba(0, 204, 204, 0.20) 0%,
+                transparent 50%
+            ),
+            var(--bg-dot-pattern),
+            linear-gradient(
+                135deg,
+                #f8fcfc 0%,
+                #e0f0f0 50%,
+                #f8fcfc 100%
+            );
+        background-size:
+            100% 100%,
+            100% 100%,
+            var(--bg-dot-size) var(--bg-dot-size),
+            100% 100%;
+    }
+    
+    #services {
+        background: 
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(51, 204, 204, 0.25) 0%,
+                transparent 40%
+            ),
+            radial-gradient(
+                circle at 90% 90%,
+                rgba(0, 204, 204, 0.20) 0%,
+                transparent 40%
+            ),
+            /* Simplified grid */
+            linear-gradient(
+                rgba(51, 204, 204, 0.10) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                90deg,
+                rgba(51, 204, 204, 0.10) 1px,
+                transparent 1px
+            ),
+            linear-gradient(
+                160deg,
+                #f6fcfc 0%,
+                #dceaea 50%,
+                #f6fcfc 100%
+            );
+        background-size:
+            100% 100%,
+            100% 100%,
+            40px 40px,
+            40px 40px,
+            100% 100%;
+    }
+    
+    #about {
+        background: 
+            /* Waves still visible */
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%2333cccc' fill-opacity='0.15' d='M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'%3E%3C/path%3E%3C/svg%3E") no-repeat top center,
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%2333cccc' fill-opacity='0.18' d='M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom center,
+            radial-gradient(
+                circle at 50% 50%,
+                rgba(51, 204, 204, 0.15) 0%,
+                transparent 60%
+            ),
+            linear-gradient(
+                180deg,
+                #f4fafa 0%,
+                #dcecec 50%,
+                #f4fafa 100%
+            );
+             background-size:
+            100% 80px,
+            100% 80px,
+            100% 100%,
+            100% 100%;
+    }
+    
+    /* Hide animated pseudo-elements on mobile */
+    #home::before,
+    #home::after,
+    #services::before,
+    #services::after,
+    #about::before,
+    #about::after {
+        display: none;
+    }
+}

@@ -11,6 +11,7 @@
 
 @import "./sections/game-section.css";
 @import "./sections/carousel.css";
+@import "./sections/section-backgrounds.css";
 
 @import "./animations/keyframes.css";
 @import "./animations/scroll-animations.css";
