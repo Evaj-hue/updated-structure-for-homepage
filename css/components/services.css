@@ -1,0 +1,34 @@
+
+/* ============================================
+   SERVICE LIST
+   ============================================ */
+.service-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.service-list li {
+    background: rgba(204, 204, 204, 0.2);
+    border: 1px solid #cccccc;
+    color: var(--text-dark);
+    border-radius: 8px;
+    padding: 0.6rem 1.25rem;
+    transition: 
+        transform 0.4s var(--ease-bounce-out), 
+        box-shadow 0.4s var(--ease-smooth), 
+        background 0.3s var(--ease-smooth),
+        border-color 0.3s var(--ease-smooth);
+    cursor: pointer;
+}
+
+.service-list li:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(51, 204, 204, 0.2);
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px rgba(51, 204, 204, 0.3);
+}
+

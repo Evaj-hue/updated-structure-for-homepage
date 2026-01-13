@@ -1,0 +1,389 @@
+
+/* ============================================
+   CAROUSEL SECTION - REDESIGNED
+   ============================================ */
+.carousel-section {
+    background: none;
+    overflow: hidden;
+}
+
+.carousel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.carousel-bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--game-dark) 0%, var(--game-mid) 100%);
+}
+
+.carousel-bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(51, 204, 204, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(51, 204, 204, 0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 80px 80px; }
+}
+
+.carousel-spotlight {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+}
+
+.spotlight-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--primary);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.spotlight-2 {
+    width: 400px;
+    height: 400px;
+    background: #6c5ce7;
+    bottom: -150px;
+    right: -100px;
+    opacity: 0.2;
+}
+
+/* Horse Carousel */
+.horse-carousel {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #ffffff, var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.carousel-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+.carousel-stage {
+    width: 650px;
+    height: 420px;
+    perspective: 1200px;
+    overflow: visible;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s var(--ease-elastic);
+}
+
+.horse-card {
+    position: absolute;
+    width: 260px;
+    height: 360px;
+    left: 50%;
+    top: 50%;
+    margin-left: -130px;
+    margin-top: -180px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: 
+        transform 0.6s var(--ease-elastic),
+        opacity 0.6s var(--ease-smooth),
+        box-shadow 0.6s var(--ease-smooth);
+}
+
+.horse-card.active {
+    box-shadow: 
+        0 25px 60px rgba(51, 204, 204, 0.5),
+        0 0 0 3px rgba(51, 204, 204, 0.4),
+        inset 0 0 30px rgba(51, 204, 204, 0.05);
+}
+
+.horse-image {
+    width: 100%;
+    height: 230px;
+    background: linear-gradient(180deg, #f8f8f8 0%, #e8e8e8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.horse-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s var(--ease-elastic);
+}
+
+.horse-card.active .horse-image img {
+    transform: scale(1.08);
+}
+
+.horse-card:hover .horse-image img {
+    transform: scale(1.05);
+}
+
+.horse-info {
+    padding: 12px 18px;
+    background: #ffffff;
+}
+
+.horse-info h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #007c7c;
+    margin-bottom: 8px;
+    text-align: center;
+    transition: color 0.3s var(--ease-smooth);
+}
+
+.horse-card.active .horse-info h3 {
+    color: var(--primary-dark);
+}
+
+.horse-info ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.horse-info ul li {
+    font-size: 0.7rem;
+    color: #666;
+    text-align: center;
+    transition: transform 0.3s var(--ease-bounce-out);
+}
+
+.horse-card.active .horse-info ul li {
+    animation: popIn 0.4s var(--ease-bounce-out) forwards;
+}
+
+.horse-card.active .horse-info ul li:nth-child(1) { animation-delay: 0.1s; }
+.horse-card.active .horse-info ul li:nth-child(2) { animation-delay: 0.2s; }
+.horse-card.active .horse-info ul li:nth-child(3) { animation-delay: 0.3s; }
+
+.horse-info ul li span {
+    display: block;
+    color: #999;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.horse-info ul li strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-top: 2px;
+}
+
+
+/* ============================================
+   CAROUSEL NAVIGATION
+   ============================================ */
+.carousel-nav {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.4s var(--ease-bounce-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 10;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-nav::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--primary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s var(--ease-smooth), height 0.4s var(--ease-smooth);
+}
+
+.carousel-nav:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-nav:hover {
+    border-color: var(--primary);
+    color: white;
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px rgba(51, 204, 204, 0.4);
+}
+
+.carousel-nav:active {
+    transform: scale(0.95);
+}
+
+
+/* ============================================
+   CAROUSEL INDICATORS
+   ============================================ */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-indicators .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.4s var(--ease-bounce-out);
+}
+
+.carousel-indicators .dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.3);
+}
+
+.carousel-indicators .dot.active {
+    background: var(--primary);
+    transform: scale(1.4);
+    box-shadow: 0 0 15px rgba(51, 204, 204, 0.6);
+}
+
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% { 
+        transform: scale(0.8); 
+        opacity: 0.5; 
+    }
+    100% { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+
+/* ============================================
+   STAGGERED CONTENT ANIMATIONS
+   ============================================ */
+.card.is-visible .card-content > *:nth-child(1) {
+    animation: slideUp 0.6s var(--ease-bounce-out) 0.1s forwards;
+    opacity: 0;
+}
+
+.card.is-visible .card-content > *:nth-child(2) {
+    animation: slideUp 0.6s var(--ease-bounce-out) 0.2s forwards;
+    opacity: 0;
+}
+
+.card.is-visible .card-content > *:nth-child(3) {
+    animation: slideUp 0.6s var(--ease-bounce-out) 0.3s forwards;
+    opacity: 0;
+}
+
+.card.is-visible .card-content > *:nth-child(4) {
+    animation: slideUp 0.6s var(--ease-bounce-out) 0.4s forwards;
+    opacity: 0;
+}
+
+.card.is-visible .card-content > *:nth-child(5) {
+    animation: slideUp 0.6s var(--ease-bounce-out) 0.5s forwards;
+    opacity: 0;
+}
+
+.card.is-visible .card-content > *:nth-child(6) {
+    animation: slideUp 0.6s var(--ease-bounce-out) 0.6s forwards;
+    opacity: 0;
+}
+
+.card#games-carousel.is-visible .horse-carousel {
+    animation: slideUp 0.8s var(--ease-elastic) 0.3s forwards;
+    opacity: 0;
+}

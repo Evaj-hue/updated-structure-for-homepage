@@ -1,0 +1,45 @@
+
+/* ============================================
+   FLOATING ANIMATION KEYFRAMES
+   ============================================ */
+@keyframes floatRotate {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-30px) rotate(90deg); }
+    50% { transform: translateY(0) rotate(180deg); }
+    75% { transform: translateY(30px) rotate(270deg); }
+}
+
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-40px) translateX(10px); }
+    50% { transform: translateY(0) translateX(20px); }
+    75% { transform: translateY(40px) translateX(10px); }
+}
+
+@keyframes floatHorizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+@keyframes floatPulse {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.5); opacity: 0.4; }
+}
+
+@keyframes floatScale {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.1; }
+    50% { transform: scale(1.3) rotate(180deg); opacity: 0.05; }
+}
+
+@keyframes floatSpin {
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(90deg) translateY(-20px); }
+    50% { transform: rotate(180deg) translateY(0); }
+    75% { transform: rotate(270deg) translateY(20px); }
+    100% { transform: rotate(360deg) translateY(0); }
+}
+
+@keyframes floatGlow {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.2); opacity: 0.08; }
+}

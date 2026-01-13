@@ -1,0 +1,56 @@
+
+/* ============================================
+   SECTIONS / CARDS - ADJUSTED 
+
+   ============================================ */
+.card {
+    position: relative;
+    height: 100dvh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 1rem 1rem 1rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    background: var(--bg-gradient);
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(60px) scale(var(--scale-start));
+    transition: 
+        opacity 0.8s var(--ease-smooth),
+        transform 1s var(--ease-elastic);
+}
+
+.card.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(var(--scale-end));
+}
+
+.card-content {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    width: 90%;
+    max-height: calc(100dvh - 120px);
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s var(--ease-bounce-out), box-shadow 0.4s var(--ease-smooth);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card.is-visible .card-content {
+    animation: slideUp 0.8s var(--ease-bounce-out) 0.2s forwards;
+}
+
+.card-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,69 @@
+
+/* ============================================
+   PARALLAX BACKGROUND
+   ============================================ */
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    will-change: transform;
+}
+
+.layer-far {
+    background-image:
+        linear-gradient(#bbbbbb 1px, transparent 1px),
+        linear-gradient(to right, #bbbbbb 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: translateZ(-1500px) scale(2.5);
+    opacity: 0.5;
+    animation: parallaxSlow 60s linear infinite;
+}
+
+.layer-mid {
+    background-image: radial-gradient(#aaaaaa 1px, transparent 1px);
+    background-size: 25px 25px;
+    transform: translateZ(-1000px) scale(2);
+    opacity: 0.5;
+    animation: parallaxMedium 40s linear infinite;
+}
+
+.layer-near {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(51, 204, 204, 0) 0%,
+        rgba(51, 204, 204, 0.2) 50%,
+        rgba(51, 204, 204, 0) 100%
+    );
+    background-size: 100% 200px;
+    animation: floatUp 20s linear infinite;
+    transform: translateZ(-500px) scale(1.5);
+}
+
+@keyframes floatUp {
+    from { background-position: center 0; }
+    to { background-position: center -400px; }
+}
+
+@keyframes parallaxSlow {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
+}
+
+@keyframes parallaxMedium {
+    from { background-position: 0 0; }
+    to { background-position: 25px 25px; }
+}

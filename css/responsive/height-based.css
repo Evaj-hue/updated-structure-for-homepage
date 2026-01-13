@@ -1,0 +1,274 @@
+
+/* ============================================
+   HEIGHT-BASED RESPONSIVE - NEW
+   ============================================ */
+@media (max-height: 800px) {
+    .card {
+        padding-top: 70px;
+    }
+    
+    .card-content {
+        padding: 1.5rem 2rem;
+    }
+    
+    .card h1, .card h2 {
+        font-size: 2.4rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+    
+    .game-card-content {
+        padding: 1.25rem 1.75rem;
+        max-width: 520px;
+    }
+    
+    .game-logo {
+        max-height: 70px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .game-badge {
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+    }
+    
+    .game-section .card-content h2 {
+        font-size: 1.85rem;
+    }
+    
+    .game-introduction {
+        font-size: 0.85rem;
+        margin-bottom: 0.85rem;
+    }
+    
+    .game-features {
+        gap: 10px;
+        margin-bottom: 1rem;
+    }
+    
+    .feature-item {
+        padding: 6px 10px;
+    }
+    
+    .feature-text {
+        font-size: 0.75rem;
+    }
+    
+    .guidebook-button,
+    .play-button {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .carousel-title {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .carousel-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-stage {
+        width: 600px;
+        height: 380px;
+    }
+    
+    .horse-card {
+        width: 240px;
+        height: 330px;
+        margin-left: -120px;
+        margin-top: -165px;
+    }
+    
+    .horse-image {
+        height: 210px;
+    }
+}
+
+@media (max-height: 700px) {
+    .card {
+        padding-top: 65px;
+    }
+    
+    .card-content {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .card h1, .card h2 {
+        font-size: 2rem;
+    }
+    
+    .game-card-content {
+        padding: 1rem 1.5rem;
+        max-width: 480px;
+    }
+    
+    .game-logo {
+        max-height: 60px;
+        margin-bottom: 0.4rem;
+    }
+    
+    .game-badge {
+        padding: 3px 10px;
+        font-size: 0.65rem;
+        margin-bottom: 6px;
+    }
+    
+    .game-section .card-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .game-introduction {
+        font-size: 0.8rem;
+        margin-bottom: 0.7rem;
+        line-height: 1.4;
+    }
+    
+    .game-features {
+        gap: 8px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .feature-item {
+        padding: 5px 8px;
+    }
+    
+    .feature-icon {
+        font-size: 0.9rem;
+    }
+    
+    .feature-text {
+        font-size: 0.7rem;
+    }
+    
+    .game-buttons {
+        gap: 10px;
+    }
+    
+    .guidebook-button,
+    .play-button {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+    
+    .btn-icon {
+        font-size: 0.9rem;
+    }
+    
+    .carousel-title {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .carousel-stage {
+        width: 520px;
+        height: 340px;
+    }
+    
+    .horse-card {
+        width: 220px;
+        height: 300px;
+        margin-left: -110px;
+        margin-top: -150px;
+    }
+    
+    .horse-image {
+        height: 190px;
+    }
+    
+    .horse-info {
+        padding: 10px 15px;
+    }
+    
+    .horse-info h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .carousel-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .carousel-indicators {
+        margin-top: 15px;
+    }
+}
+
+@media (max-height: 600px) {
+    .card {
+        padding-top: 60px;
+    }
+    
+    .card-content {
+        padding: 1rem 1.25rem;
+    }
+    
+    .card h1, .card h2 {
+        font-size: 1.75rem;
+    }
+    
+    .card p {
+        font-size: 0.85rem;
+    }
+    
+    .game-card-content {
+        padding: 0.85rem 1.25rem;
+        max-width: 450px;
+    }
+    
+    .game-logo {
+        max-height: 50px;
+    }
+    
+    .game-section .card-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .game-introduction {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .game-features {
+        gap: 6px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .guidebook-button,
+    .play-button {
+        padding: 6px 14px;
+        font-size: 0.75rem;
+    }
+    
+    .carousel-stage {
+        width: 450px;
+        height: 300px;
+    }
+    
+    .horse-card {
+        width: 200px;
+        height: 270px;
+        margin-left: -100px;
+        margin-top: -135px;
+    }
+    
+    .horse-image {
+        height: 170px;
+    }
+}
+
+

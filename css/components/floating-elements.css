@@ -1,0 +1,142 @@
+
+/* ============================================
+   FLOATING ELEMENTS
+   ============================================ */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 30%;
+    opacity: 0.08;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    animation: floatRotate 20s ease-in-out infinite;
+}
+
+.shape-1 { width: 80px; height: 80px; top: 10%; left: 5%; animation-delay: 0s; animation-duration: 25s; }
+.shape-2 { width: 120px; height: 120px; top: 60%; left: 85%; animation-delay: -5s; animation-duration: 30s; opacity: 0.06; }
+.shape-3 { width: 60px; height: 60px; top: 30%; left: 90%; animation-delay: -10s; animation-duration: 22s; }
+.shape-4 { width: 100px; height: 100px; top: 80%; left: 10%; animation-delay: -3s; animation-duration: 28s; opacity: 0.05; }
+.shape-5 { width: 50px; height: 50px; top: 45%; left: 3%; animation-delay: -8s; animation-duration: 24s; }
+.shape-6 { width: 90px; height: 90px; top: 15%; left: 75%; animation-delay: -12s; animation-duration: 26s; opacity: 0.07; }
+.shape-7 { width: 70px; height: 70px; top: 70%; left: 60%; animation-delay: -6s; animation-duration: 23s; }
+.shape-8 { width: 40px; height: 40px; top: 5%; left: 50%; animation-delay: -15s; animation-duration: 20s; }
+
+.floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0.1;
+    animation: floatUpDown 15s ease-in-out infinite;
+}
+
+.circle-1 { width: 20px; height: 20px; top: 20%; left: 15%; animation-delay: 0s; animation-duration: 18s; }
+.circle-2 { width: 35px; height: 35px; top: 50%; left: 80%; animation-delay: -4s; animation-duration: 20s; opacity: 0.08; }
+.circle-3 { width: 15px; height: 15px; top: 75%; left: 25%; animation-delay: -8s; animation-duration: 16s; }
+.circle-4 { width: 25px; height: 25px; top: 35%; left: 70%; animation-delay: -2s; animation-duration: 22s; }
+.circle-5 { width: 30px; height: 30px; top: 85%; left: 55%; animation-delay: -6s; animation-duration: 19s; opacity: 0.12; }
+.circle-6 { width: 18px; height: 18px; top: 10%; left: 40%; animation-delay: -10s; animation-duration: 17s; }
+
+.floating-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: 0.15;
+    animation: floatHorizontal 25s linear infinite;
+}
+
+.line-1 { width: 150px; top: 25%; left: -150px; animation-duration: 30s; }
+.line-2 { width: 200px; top: 55%; left: -200px; animation-delay: -8s; animation-duration: 35s; opacity: 0.1; }
+.line-3 { width: 100px; top: 75%; left: -100px; animation-delay: -15s; animation-duration: 28s; }
+.line-4 { width: 180px; top: 40%; left: -180px; animation-delay: -20s; animation-duration: 32s; opacity: 0.12; }
+
+.floating-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: 0.2;
+    animation: floatPulse 10s ease-in-out infinite;
+}
+
+.dot-1 { top: 15%; left: 20%; animation-delay: 0s; }
+.dot-2 { top: 25%; left: 60%; animation-delay: -1s; }
+.dot-3 { top: 40%; left: 10%; animation-delay: -2s; }
+.dot-4 { top: 55%; left: 45%; animation-delay: -3s; }
+.dot-5 { top: 65%; left: 85%; animation-delay: -4s; }
+.dot-6 { top: 80%; left: 30%; animation-delay: -5s; }
+.dot-7 { top: 10%; left: 75%; animation-delay: -6s; }
+.dot-8 { top: 35%; left: 95%; animation-delay: -7s; }
+.dot-9 { top: 70%; left: 5%; animation-delay: -8s; }
+.dot-10 { top: 90%; left: 70%; animation-delay: -9s; }
+
+.floating-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    opacity: 0.1;
+    animation: floatScale 20s ease-in-out infinite;
+}
+
+.ring-1 { width: 60px; height: 60px; top: 20%; left: 80%; animation-delay: 0s; }
+.ring-2 { width: 100px; height: 100px; top: 60%; left: 5%; animation-delay: -5s; opacity: 0.08; }
+.ring-3 { width: 40px; height: 40px; top: 85%; left: 90%; animation-delay: -10s; }
+.ring-4 { width: 80px; height: 80px; top: 40%; left: 50%; animation-delay: -15s; opacity: 0.06; }
+
+.floating-cross {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.15;
+    animation: floatSpin 30s linear infinite;
+}
+
+.floating-cross::before,
+.floating-cross::after {
+    content: '';
+    position: absolute;
+    background: var(--primary);
+}
+
+.floating-cross::before {
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.floating-cross::after {
+    width: 3px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.cross-1 { top: 30%; left: 25%; animation-delay: 0s; }
+.cross-2 { top: 70%; left: 75%; animation-delay: -8s; }
+.cross-3 { top: 15%; left: 65%; animation-delay: -15s; }
+.cross-4 { top: 55%; left: 15%; animation-delay: -22s; }
+
+.glowing-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--primary-light), transparent 70%);
+    opacity: 0.15;
+    animation: floatGlow 15s ease-in-out infinite;
+    filter: blur(20px);
+}
+
+.orb-1 { width: 200px; height: 200px; top: 10%; left: -50px; animation-delay: 0s; }
+.orb-2 { width: 300px; height: 300px; top: 50%; right: -100px; animation-delay: -5s; opacity: 0.1; }
+.orb-3 { width: 150px; height: 150px; bottom: 10%; left: 30%; animation-delay: -10s; }
