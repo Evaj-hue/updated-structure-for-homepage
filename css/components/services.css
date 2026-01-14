@@ -1,34 +1,216 @@
-
 /* ============================================
    SERVICE LIST
    ============================================ */
 .service-list {
     list-style: none;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
-.service-list li {
-    background: rgba(204, 204, 204, 0.2);
-    border: 1px solid #cccccc;
+/* ============================================
+   SERVICE ITEM
+   ============================================ */
+.service-item {
+    position: relative;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 250, 0.9));
+    border: 1px solid rgba(51, 204, 204, 0.2);
     color: var(--text-dark);
-    border-radius: 8px;
-    padding: 0.6rem 1.25rem;
+    border-radius: 16px;
+    padding: 1rem 1.5rem;
+    min-width: 240px;
+    max-width: 300px;
+    cursor: pointer;
+    overflow: hidden;
+    
     transition: 
         transform 0.4s var(--ease-bounce-out), 
         box-shadow 0.4s var(--ease-smooth), 
         background 0.3s var(--ease-smooth),
         border-color 0.3s var(--ease-smooth);
-    cursor: pointer;
 }
 
-.service-list li:hover {
+/* Top accent bar */
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease-smooth);
+}
+
+/* Description text */
+.service-item::after {
+    content: attr(data-description);
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding-top: 0;
+    transition: 
+        max-height 0.5s var(--ease-smooth),
+        opacity 0.4s var(--ease-smooth),
+        margin-top 0.4s var(--ease-smooth),
+        padding-top 0.4s var(--ease-smooth);
+}
+
+/* ============================================
+   SERVICE HEADER - Icon + Title on same line
+   ============================================ */
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.service-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    transition: transform 0.4s var(--ease-elastic);
+}
+
+.service-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s var(--ease-smooth);
+}
+
+/* ============================================
+   HOVER STATE
+   ============================================ */
+.service-item:hover {
     transform: translateY(-8px) scale(1.02);
-    background: rgba(51, 204, 204, 0.2);
+    background: linear-gradient(145deg, #ffffff, #f0fafa);
     border-color: var(--primary);
-    box-shadow: 0 10px 25px rgba(51, 204, 204, 0.3);
+    box-shadow: 
+        0 15px 40px rgba(51, 204, 204, 0.25),
+        0 0 0 1px rgba(51, 204, 204, 0.1);
 }
 
+.service-item:hover::before {
+    transform: scaleX(1);
+}
+
+.service-item:hover .service-icon {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+.service-item:hover .service-title {
+    color: var(--primary-dark);
+}
+
+.service-item:hover::after {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(51, 204, 204, 0.3);
+}
+
+/* ============================================
+   EXPANDED STATE (for click on mobile)
+   ============================================ */
+.service-item.expanded {
+    transform: translateY(-8px) scale(1.02);
+    background: linear-gradient(145deg, #ffffff, #f0fafa);
+    border-color: var(--primary);
+    box-shadow: 
+        0 15px 40px rgba(51, 204, 204, 0.25),
+        0 0 0 1px rgba(51, 204, 204, 0.1);
+}
+
+.service-item.expanded::before {
+    transform: scaleX(1);
+}
+
+.service-item.expanded .service-icon {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+.service-item.expanded .service-title {
+    color: var(--primary-dark);
+}
+
+.service-item.expanded::after {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(51, 204, 204, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .service-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service-item {
+        min-width: 280px;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .service-item:hover,
+    .service-item.expanded {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+@media (max-width: 480px) {
+    .service-item {
+        padding: 0.9rem 1.2rem;
+    }
+    
+    .service-icon {
+        font-size: 1.2rem;
+    }
+    
+    .service-title {
+        font-size: 0.85rem;
+    }
+    
+    .service-item:hover::after,
+    .service-item.expanded::after {
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .service-item,
+    .service-item::after,
+    .service-item::before,
+    .service-icon,
+    .service-title {
+        transition: none;
+    }
+    
+    .service-item:hover,
+    .service-item.expanded {
+        transform: none;
+    }
+    
+    .service-item:hover .service-icon,
+    .service-item.expanded .service-icon {
+        transform: none;
+    }
+}

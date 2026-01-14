@@ -12,8 +12,12 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="img/logo.png" alt="FUPIX Logo">
+            <img src="img/fupix-logo01.png" alt="FUPIX Logo">
+            <span class="company-name">
+                <strong>FUPIX</strong> <span>Solutions</span>
+            </span>
         </div>
+
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -79,29 +83,92 @@
             <div class="glowing-orb orb-3"></div>
         </div>
 
-        <section id="home" class="card">
-            <div class="card-content">
-                <h1>Welcome to FUPIX SOLUTIONS</h1>
-                <p>Innovative solutions, elegantly delivered. Scroll down to explore.</p>
-            </div>
-        </section>
+            <section id="home" class="card">
+                <div class="card-content">
+                    <h1>FUPIX Solutions Corporation</h1>
+                    <p>
+                        We specialize in the installation, maintenance, 
+                        and technical support of online horse racing platforms,
+                        including Royal GrandPrix Derby Online—delivering reliable systems 
+                        and seamless gaming experiences.
+                    </p>
+                </div>
+            </section>
+
 
         <section id="services" class="card">
             <div class="card-content">
                 <h2>Our Services</h2>
                 <p>We offer a range of services designed for excellence and growth.</p>
                 <ul class="service-list">
-                    <li>Custom Software Development</li>
-                    <li>Strategic IT Consulting</li>
-                    <li>24/7 Technical Support</li>
+                    <li class="service-item" data-description="Tailored solutions built from the ground up to meet your unique business requirements and scale with your growth.">
+                        <span class="service-icon">💻</span>
+                        <span class="service-title">Custom Software Development</span>
+                        <span class="service-desc"></span>
+                    </li>
+                    <li class="service-item" data-description="Expert guidance to align your technology investments with business goals and maximize ROI.">
+                        <span class="service-icon">📊</span>
+                        <span class="service-title">Strategic IT Consulting</span>
+                        <span class="service-desc"></span>
+                    </li>
+                    <li class="service-item" data-description="Round-the-clock assistance ensuring your systems run smoothly with minimal downtime.">
+                        <span class="service-icon">🛠️</span>
+                        <span class="service-title">24/7 Technical Support</span>
+                        <span class="service-desc"></span>
+                    </li>
                 </ul>
             </div>
         </section>
 
         <section id="about" class="card">
-            <div class="card-content">
-                <h2>About Us</h2>
-                <p>FUPIX SOLUTIONS CORPORATION is a leading provider of technology solutions, committed to delivering excellence and innovation that empowers our clients.</p>
+            <div class="card-content about-card">
+                <!-- Hover Hint Indicator -->
+                <div class="hover-hint">
+                    <span class="hover-hint-text">Hover for details</span>
+                    <span class="hover-hint-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12l7 7 7-7"/>
+                        </svg>
+                    </span>
+                </div>
+
+                <!-- Main Content (Always Visible) -->
+                <div class="about-main">
+                    <h2>About Us</h2>
+                    <p>FUPIX SOLUTIONS CORPORATION is a leading provider of technology solutions, committed to delivering excellence and innovation that empowers our clients.</p>
+                </div>
+
+                <!-- Details (Visible on Hover) -->
+                <div class="about-details">
+                    <div class="details-divider">
+                        <span></span>
+                        <span class="divider-text">Company Information</span>
+                        <span></span>
+                    </div>
+                    
+                    <ul class="company-info-list">
+                        <li class="info-item">
+                            <span class="info-label">Company Name</span>
+                            <span class="info-value">FUPIX SOLUTIONS CORPORATION</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Establishment</span>
+                            <span class="info-value">2024</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">President</span>
+                            <span class="info-value">LUKE B. LIM</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Industry</span>
+                            <span class="info-value">Information Technology, Gaming</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Headquarters</span>
+                            <span class="info-value">7E, Cyber One Building, 11 Eastwood Avenue, Quezon City</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -387,338 +454,8 @@
 
     </main>
 
-    <!-- MODAL - EMBEDDED DIRECTLY -->
-    <div id="guidebookModal" class="modal-overlay">
-        <div class="modal-container">
-            <div class="modal-content">
-                <button class="modal-close" id="closeModal">&times;</button>
-                
-                <div class="modal-header">
-                    <div class="modal-icon">📖</div>
-                    <h2 class="modal-title">Casino Derby Betting Guidebook</h2>
-                    <p class="modal-subtitle">Master the art of horse racing betting</p>
-                </div>
-                
-                <div class="modal-body">
-                    <!-- Navigation Tabs -->
-                    <div class="modal-tabs">
-                        <button class="tab-btn active" data-tab="basics">
-                            <span class="tab-icon">🎯</span>
-                            Basics
-                        </button>
-                        <button class="tab-btn" data-tab="bets">
-                            <span class="tab-icon">💰</span>
-                            Bet Types
-                        </button>
-                        <button class="tab-btn" data-tab="stats">
-                            <span class="tab-icon">📊</span>
-                            Horse Stats
-                        </button>
-                        <button class="tab-btn" data-tab="tips">
-                            <span class="tab-icon">💡</span>
-                            Pro Tips
-                        </button>
-                    </div>
-                    
-                    <!-- Tab Content -->
-                    <div class="tab-content">
-                        <!-- Basics Tab -->
-                        <div class="tab-pane active" id="basics">
-                            <div class="guide-section">
-                                <h3>Welcome to Casino Derby</h3>
-                                <p>Casino Derby is an exciting virtual horse racing game where you can bet on your favorite horses and watch them compete in thrilling races.</p>
-                                
-                                <div class="info-cards">
-                                    <div class="info-card">
-                                        <div class="info-card-icon">🏇</div>
-                                        <h4>How It Works</h4>
-                                        <p>Select your horse, place your bet, and watch the race unfold. Winners are determined by a combination of horse stats and randomized race conditions.</p>
-                                    </div>
-                                    
-                                    <div class="info-card">
-                                        <div class="info-card-icon">🎲</div>
-                                        <h4>Fair Racing</h4>
-                                        <p>Our races use certified random number generators to ensure fair and unpredictable outcomes every time.</p>
-                                    </div>
-                                    
-                                    <div class="info-card">
-                                        <div class="info-card-icon">🏆</div>
-                                        <h4>Winning</h4>
-                                        <p>Payouts are calculated based on your bet type, wager amount, and the odds at the time of your bet.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="guide-section">
-                                <h3>Getting Started</h3>
-                                <ol class="steps-list">
-                                    <li>
-                                        <span class="step-number">1</span>
-                                        <div class="step-content">
-                                            <h4>Browse the Horses</h4>
-                                            <p>Review all 14 horses and their unique statistics before placing your bet.</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="step-number">2</span>
-                                        <div class="step-content">
-                                            <h4>Choose Your Bet Type</h4>
-                                            <p>Select from Win, Place, Show, or Exotic bets based on your strategy.</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="step-number">3</span>
-                                        <div class="step-content">
-                                            <h4>Set Your Wager</h4>
-                                            <p>Enter the amount you wish to bet within your available balance.</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span class="step-number">4</span>
-                                        <div class="step-content">
-                                            <h4>Watch & Win</h4>
-                                            <p>Enjoy the race and collect your winnings if your bet comes through!</p>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                        
-                        <!-- Bet Types Tab -->
-                        <div class="tab-pane" id="bets">
-                            <div class="guide-section">
-                                <h3>Standard Bets</h3>
-                                
-                                <div class="bet-types-grid">
-                                    <div class="bet-type-card">
-                                        <div class="bet-type-header">
-                                            <span class="bet-type-icon">🥇</span>
-                                            <h4>Win</h4>
-                                        </div>
-                                        <p>Your horse must finish in 1st place.</p>
-                                        <div class="bet-odds">
-                                            <span class="odds-label">Typical Payout:</span>
-                                            <span class="odds-value">2x - 15x</span>
-                                        </div>
-                                        <div class="difficulty-badge hard">Higher Risk</div>
-                                    </div>
-                                    
-                                    <div class="bet-type-card">
-                                        <div class="bet-type-header">
-                                            <span class="bet-type-icon">🥈</span>
-                                            <h4>Place</h4>
-                                        </div>
-                                        <p>Your horse must finish 1st or 2nd.</p>
-                                        <div class="bet-odds">
-                                            <span class="odds-label">Typical Payout:</span>
-                                            <span class="odds-value">1.5x - 6x</span>
-                                        </div>
-                                        <div class="difficulty-badge medium">Medium Risk</div>
-                                    </div>
-                                    
-                                    <div class="bet-type-card">
-                                        <div class="bet-type-header">
-                                            <span class="bet-type-icon">🥉</span>
-                                            <h4>Show</h4>
-                                        </div>
-                                        <p>Your horse must finish in top 3.</p>
-                                        <div class="bet-odds">
-                                            <span class="odds-label">Typical Payout:</span>
-                                            <span class="odds-value">1.2x - 3x</span>
-                                        </div>
-                                        <div class="difficulty-badge easy">Lower Risk</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="guide-section">
-                                <h3>Exotic Bets</h3>
-                                
-                                <div class="bet-types-grid">
-                                    <div class="bet-type-card exotic">
-                                        <div class="bet-type-header">
-                                            <span class="bet-type-icon">🎯</span>
-                                            <h4>Exacta</h4>
-                                        </div>
-                                        <p>Pick the 1st and 2nd place finishers in exact order.</p>
-                                        <div class="bet-odds">
-                                            <span class="odds-label">Typical Payout:</span>
-                                            <span class="odds-value">10x - 100x</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="bet-type-card exotic">
-                                        <div class="bet-type-header">
-                                            <span class="bet-type-icon">🎪</span>
-                                            <h4>Trifecta</h4>
-                                        </div>
-                                        <p>Pick the 1st, 2nd, and 3rd place finishers in exact order.</p>
-                                        <div class="bet-odds">
-                                            <span class="odds-label">Typical Payout:</span>
-                                            <span class="odds-value">50x - 500x</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="bet-type-card exotic">
-                                        <div class="bet-type-header">
-                                            <span class="bet-type-icon">🌟</span>
-                                            <h4>Superfecta</h4>
-                                        </div>
-                                        <p>Pick the top 4 finishers in exact order.</p>
-                                        <div class="bet-odds">
-                                            <span class="odds-label">Typical Payout:</span>
-                                            <span class="odds-value">100x - 5000x</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Horse Stats Tab -->
-                        <div class="tab-pane" id="stats">
-                            <div class="guide-section">
-                                <h3>Understanding Horse Statistics</h3>
-                                <p>Each horse has three key attributes that influence their performance in races.</p>
-                                
-                                <div class="stats-explanation">
-                                    <div class="stat-item">
-                                        <div class="stat-header">
-                                            <span class="stat-icon speed">⚡</span>
-                                            <h4>Speed</h4>
-                                        </div>
-                                        <div class="stat-bar-container">
-                                            <div class="stat-bar speed-bar" style="width: 85%;"></div>
-                                        </div>
-                                        <p>Determines the horse's maximum velocity during the race. High speed horses excel on straightaways.</p>
-                                    </div>
-                                    
-                                    <div class="stat-item">
-                                        <div class="stat-header">
-                                            <span class="stat-icon stamina">💪</span>
-                                            <h4>Stamina</h4>
-                                        </div>
-                                        <div class="stat-bar-container">
-                                            <div class="stat-bar stamina-bar" style="width: 75%;"></div>
-                                        </div>
-                                        <p>Affects how well the horse maintains speed throughout the race. Crucial for longer races.</p>
-                                    </div>
-                                    
-                                    <div class="stat-item">
-                                        <div class="stat-header">
-                                            <span class="stat-icon accel">🚀</span>
-                                            <h4>Acceleration</h4>
-                                        </div>
-                                        <div class="stat-bar-container">
-                                            <div class="stat-bar accel-bar" style="width: 80%;"></div>
-                                        </div>
-                                        <p>How quickly the horse reaches top speed. Important for getting a good start and final sprints.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="guide-section">
-                                <h3>Stat Ranges</h3>
-                                <div class="stat-ranges">
-                                    <div class="range-item">
-                                        <span class="range-label">Low</span>
-                                        <span class="range-value">60-70</span>
-                                        <span class="range-desc">Below average performer</span>
-                                    </div>
-                                    <div class="range-item">
-                                        <span class="range-label">Medium</span>
-                                        <span class="range-value">71-80</span>
-                                        <span class="range-desc">Solid competitor</span>
-                                    </div>
-                                    <div class="range-item">
-                                        <span class="range-label">High</span>
-                                        <span class="range-value">81-90</span>
-                                        <span class="range-desc">Top-tier contender</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Pro Tips Tab -->
-                        <div class="tab-pane" id="tips">
-                            <div class="guide-section">
-                                <h3>Expert Strategies</h3>
-                                
-                                <div class="tips-grid">
-                                    <div class="tip-card">
-                                        <div class="tip-number">01</div>
-                                        <h4>Balance Your Bets</h4>
-                                        <p>Don't put all your chips on one horse. Spread your bets across multiple horses to increase your chances of winning.</p>
-                                    </div>
-                                    
-                                    <div class="tip-card">
-                                        <div class="tip-number">02</div>
-                                        <h4>Study the Stats</h4>
-                                        <p>A horse with high speed but low stamina may burn out before the finish line. Look for balanced stats.</p>
-                                    </div>
-                                    
-                                    <div class="tip-card">
-                                        <div class="tip-number">03</div>
-                                        <h4>Consider the Odds</h4>
-                                        <p>Favorites don't always win. Sometimes betting on an underdog with decent stats can yield bigger payouts.</p>
-                                    </div>
-                                    
-                                    <div class="tip-card">
-                                        <div class="tip-number">04</div>
-                                        <h4>Start with Show Bets</h4>
-                                        <p>New to betting? Start with Show bets to build your bankroll before moving to riskier bet types.</p>
-                                    </div>
-                                    
-                                    <div class="tip-card">
-                                        <div class="tip-number">05</div>
-                                        <h4>Set a Budget</h4>
-                                        <p>Always decide how much you're willing to bet before you start. Stick to your budget no matter what.</p>
-                                    </div>
-                                    
-                                    <div class="tip-card">
-                                        <div class="tip-number">06</div>
-                                        <h4>Watch Multiple Races</h4>
-                                        <p>Observe how different horses perform across multiple races before committing to larger bets.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="guide-section">
-                                <h3>Common Mistakes to Avoid</h3>
-                                <div class="mistakes-list">
-                                    <div class="mistake-item">
-                                        <span class="mistake-icon">❌</span>
-                                        <div class="mistake-content">
-                                            <h4>Chasing Losses</h4>
-                                            <p>Don't increase your bets to recover losses. Stick to your strategy.</p>
-                                        </div>
-                                    </div>
-                                    <div class="mistake-item">
-                                        <span class="mistake-icon">❌</span>
-                                        <div class="mistake-content">
-                                            <h4>Ignoring Stats</h4>
-                                            <p>Betting based on horse names or colors instead of actual performance data.</p>
-                                        </div>
-                                    </div>
-                                    <div class="mistake-item">
-                                        <span class="mistake-icon">❌</span>
-                                        <div class="mistake-content">
-                                            <h4>Betting Too Much</h4>
-                                            <p>Never bet more than you can afford to lose. Keep it fun!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="modal-footer">
-                    <p class="footer-note">🎰 Gamble responsibly. This is a virtual betting game for entertainment purposes.</p>
-                    <button class="modal-btn-primary" id="closeModalBtn">Got It!</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+
 
 <!-- At the end of body -->
 <script type="module" src="js/main.js"></script>

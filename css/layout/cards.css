@@ -54,3 +54,310 @@
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
+
+
+/* ============================================
+   ABOUT CARD - Interactive Hover
+   ============================================ */
+.about-card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* ============================================
+   HOVER HINT INDICATOR - FIXED
+   ============================================ */
+.hover-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 1.5rem;
+    opacity: 1;
+    max-height: 80px;
+    transition: 
+        opacity 0.3s var(--ease-smooth),
+        max-height 0.4s var(--ease-smooth),
+        margin-top 0.4s var(--ease-smooth);
+}
+
+.hover-hint-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hover-hint-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(51, 204, 204, 0.1);
+    border: 1px solid rgba(51, 204, 204, 0.3);
+    border-radius: 50%;
+    color: var(--primary);
+    animation: bounceDown 1.5s ease-in-out infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+/* HIDE hint on hover - FIXED */
+.about-card:hover .hover-hint {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.about-main {
+    text-align: center;
+}
+
+.about-main h2 {
+    margin-bottom: 1rem;
+}
+
+.about-main p {
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+/* ============================================
+   DETAILS SECTION (Hidden by Default)
+   ============================================ */
+.about-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 
+        max-height 0.5s var(--ease-smooth),
+        opacity 0.4s var(--ease-smooth) 0.1s,
+        margin-top 0.4s var(--ease-smooth);
+    margin-top: 0;
+}
+
+/* Show details on hover */
+.about-card:hover .about-details {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+/* ============================================
+   DETAILS DIVIDER
+   ============================================ */
+.details-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1.25rem;
+}
+
+.details-divider span:first-child,
+.details-divider span:last-child {
+    flex: 1;
+    max-width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(51, 204, 204, 0.4), transparent);
+}
+
+.divider-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+/* ============================================
+   COMPANY INFO LIST
+   ============================================ */
+.company-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    background: rgba(51, 204, 204, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary);
+    gap: 1rem;
+    transition: all 0.3s var(--ease-smooth);
+    text-align: left;
+}
+
+.info-item:hover {
+    background: rgba(51, 204, 204, 0.1);
+    transform: translateX(5px);
+}
+
+.info-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 120px;
+}
+
+.info-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: right;
+    line-height: 1.4;
+}
+
+/* ============================================
+   TOP ACCENT BAR
+   ============================================ */
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-smooth);
+    border-radius: 15px 15px 0 0;
+}
+
+.about-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .about-card:hover .about-details {
+        max-height: 500px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .info-label {
+        min-width: auto;
+    }
+    
+    .info-value {
+        text-align: left;
+    }
+    
+    .hover-hint-text {
+        font-size: 0.7rem;
+    }
+    
+    .hover-hint-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .hover-hint-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .divider-text {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+    
+    .info-label {
+        font-size: 0.7rem;
+    }
+    
+    .info-value {
+        font-size: 0.8rem;
+    }
+    
+    .details-divider {
+        gap: 10px;
+    }
+    
+    .details-divider span:first-child,
+    .details-divider span:last-child {
+        max-width: 60px;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .about-card,
+    .about-card::before,
+    .about-main,
+    .about-details,
+    .hover-hint,
+    .info-item {
+        transition: none;
+    }
+    
+    .hover-hint-icon {
+        animation: none;
+    }
+}
+
+/* ============================================
+   CLICK TO EXPAND (Mobile Touch Support)
+   ============================================ */
+.about-card.expanded .hover-hint {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.about-card.expanded .about-details {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.about-card.expanded::before {
+    transform: scaleX(1);
+}

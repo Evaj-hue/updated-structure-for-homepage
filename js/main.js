@@ -9,6 +9,8 @@ import { initNavigation } from './components/navigation.js';
 import { initCarousel } from './components/carousel.js';
 import { initParallax } from './components/parallax.js';
 import { initModal } from './components/modal.js';
+import { initServices } from './features/services.js';
+import { initAbout } from './features/about.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get shared DOM elements
@@ -24,4 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initCarousel();
     initParallax(scrollContainer);
     initModal();
+    initServices();
+    initAbout();
 });
